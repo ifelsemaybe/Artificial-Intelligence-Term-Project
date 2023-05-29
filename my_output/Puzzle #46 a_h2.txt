@@ -1,0 +1,73 @@
+Orignal Puzzle GRID:
+
+. C C I K M 
+. . H I K M 
+A A H . L N 
+F G D D L N 
+F G . J L N 
+E E . J . . 
+
+
+
+Moves that led to solution:
+
+Move #1: Car L moved 1 time in the down direction.
+
+Move #2: Car N moved 1 time in the down direction.
+
+Move #3: Car C moved 1 time in the left direction.
+
+Move #4: Car H moved 1 time in the up direction.
+
+Move #5: Car A moved 4 times in the right direction.
+
+
+Time Taken for a_h2: 0.017000436782836914s
+
+GRID: 
+
+C C H I K M 
+. . H I K M 
+. . . . . . 
+F G D D L N 
+F G . J L N 
+E E . J L N 
+
+
+
+Car Name C:
+Position ranging from 11 to 12 - facing Horizontaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 43 to 44 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name E:
+Position ranging from 61 to 62 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 41 to 51 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name G:
+Position ranging from 42 to 52 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 13 to 23 - facing Verticaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name I:
+Position ranging from 14 to 24 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 54 to 64 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 15 to 25 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 45 to 65 - facing Verticaly - has length of 3 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name M:
+Position ranging from 16 to 26 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name N:
+Position ranging from 46 to 66 - facing Verticaly - has length of 3 - Fuel level at (99) - isAmbulance?(False).
+

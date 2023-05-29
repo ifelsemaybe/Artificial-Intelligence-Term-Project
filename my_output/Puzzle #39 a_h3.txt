@@ -1,0 +1,71 @@
+Orignal Puzzle GRID:
+
+B B . . D D 
+J E E F F N 
+J A A M . N 
+G G L M . . 
+K . L H H . 
+K I I I . . 
+
+
+
+Moves that led to solution:
+
+Move #1: Car N moved 3 times in the down direction.
+
+Move #2: Car F moved 1 time in the right direction.
+
+Move #3: Car M moved 2 times in the up direction.
+
+Move #4: Car A moved 3 times in the right direction.
+
+
+Time Taken for a_h3: 0.009999990463256836s
+
+GRID: 
+
+B B . M D D 
+J E E M F F 
+J . . . . . 
+G G L . . . 
+K . L H H N 
+K I I I . N 
+
+
+
+Car Name B:
+Position ranging from 11 to 12 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 15 to 16 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name E:
+Position ranging from 22 to 23 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 25 to 26 - facing Horizontaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name G:
+Position ranging from 41 to 42 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 54 to 55 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name I:
+Position ranging from 62 to 64 - facing Horizontaly - has length of 3 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 21 to 31 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 51 to 61 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 43 to 53 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name M:
+Position ranging from 14 to 24 - facing Verticaly - has length of 2 - Fuel level at (98) - isAmbulance?(False).
+
+Car Name N:
+Position ranging from 56 to 66 - facing Verticaly - has length of 2 - Fuel level at (97) - isAmbulance?(False).
+

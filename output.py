@@ -1,51 +1,97 @@
-def output(heuristicNumber, root, elapsed_time, open_, closed, goalState):
-    # before returning, I can ouput the stuff the teacher wants
+import os
 
-    # Output
-    file = open("gbfs-" + str(heuristicNumber) + "sol-" + str(1) + ".txt", "w")
+moves = ""
+counter = 0
+def recursionMoves(state, closed):
 
-    rootString = ''.join([item for sublist in root.gameState.grid for item in sublist])
-    file.write("--------------------------------------------------------------------------------\n")
-    file.write('Inital board configuration: ' + rootString + "\n\n")
-    for el in root.gameState.grid:
-        file.write(''.join([str(item) for item in el]) + "\n")
-    file.write("\n\n")
+    global moves
+    global counter
 
-    print("testse", root.gameState.Cars["B"].fuel)
-    carFuelString = ""
-    for car in root.gameState.Cars:
-        letter = car
-        fuel = str(root.gameState.Cars[car].fuel)
-        carFuelString += letter + ": " + fuel + " "
-    file.write("Car fuel available: " + carFuelString + "\n")
-    file.write("Runtime: " + str(round(elapsed_time, 5)) + "seconds\n")
-    file.write("Search path length: " + str(len(open_ + closed)) + "\n")
+    if state.parentGrid_index is not None:
 
-    # YOU ARE HERE CHRISTIAN
-    # print("goal", goalState.parentGrid_index)
-    print(closed)
-    solutionPathState = []
-    solutionPathMove = []
+        recursionMoves(closed[state.parentGrid_index], closed)
 
-    for el in closed:
-        if goalState.parentGrid_index == el.index:
-            solutionPathState.append(el)
+    if state.parentGrid_index is None:
 
-    file.write("Solution path length: " + str(len(solutionPathState)) + "\n")
-    file.write("Solution path:" + "answer\n")
+        return None
 
-    for el in solutionPathState:
-        stateGridString = ''.join([item for sublist in el.grid for item in sublist])
-        stateMoveString = "" #need to do the moves
-        file.write(stateMoveString, stateGridString)
+    counter += 1
+
+    if state.moveCount == 1:
+
+        moves += "Move #" + str(counter) + ": Car " + state.moveLetter + " moved " + str(state.moveCount) + " time in the " + state.moveDir + " direction.\n\n"
+
+    else :
+
+        moves += "Move #" + str(counter) + ": Car " + state.moveLetter + " moved " + str(state.moveCount) + " times in the " + state.moveDir + " direction.\n\n"
 
 
-    file.write("\n\n")
 
-    for el in closed[0].grid:
-        file.write(''.join([str(item) for item in el]) + "\n")
-    file.write("\n\n")
 
-    file.close()
+
+
+
+puzzlenbr = 1
+def out(lot, root, elapsed_time, open_, closed, isgreaterthan50k):
+
+    global puzzlenbr
+
+    if not os.path.isdir("output"):
+
+        os.mkdir("output")
+
+    if isgreaterthan50k and "A" in lot.gameState.Cars:
+
+        file = open("output\\Puzzle #" + str(puzzlenbr) + " " + lot.gameState.algo + "--SOLUTION NOT FOUND.txt", "w")
+
+        if lot.gameState.algo == "ucs":
+
+            puzzlenbr += 1
+
+        text = "Your Solution has not been found after an excess of 50000 different gamestates have been reached in trying to find it!\n\n Sorry!"
+
+        file.write(text)
+
+        return
+
+    if not open_ and "A" in lot.gameState.Cars:
+
+        file = open("output\\Puzzle #" + str(puzzlenbr) + " " + lot.gameState.algo + "--SOLUTION NOT FOUND.txt", "w")
+
+        if lot.gameState.algo == "ucs":
+
+            puzzlenbr += 1
+
+        text = "Your Solution has not been found after all possible moves have been exhausted in trying to find it!\n\n Sorry!"
+
+        file.write(text)
+
+        return
+
+
+    file = open("output\\Puzzle #" + str(puzzlenbr) + " " + lot.gameState.algo + ".txt", "w")
+
+    if lot.gameState.algo == "ucs":
+
+        puzzlenbr += 1
+
+    text = "Orignal Puzzle GRID:\n\n" + str(root)
+
+    text += "Moves that led to solution:\n\n"
+
+    recursionMoves(lot.gameState, closed)
+
+    global moves, counter
+
+    text += moves + "\n"
+
+    moves = ""
+    counter = 0
+
+    text += "Time Taken for " + lot.gameState.algo + ": " + str(elapsed_time) + "s\n\n"
+
+    text += str(lot)
+
+    file.write(text)
 
     

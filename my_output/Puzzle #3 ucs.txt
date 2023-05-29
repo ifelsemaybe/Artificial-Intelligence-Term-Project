@@ -1,0 +1,94 @@
+Orignal Puzzle GRID:
+
+J B B C C C 
+J D D . . M 
+J A A L . M 
+F F K L . N 
+. . K G G N 
+. H H . . . 
+
+
+
+Moves that led to solution:
+
+Move #1: Car H moved 2 times in the right direction.
+
+Move #2: Car K moved 1 time in the down direction.
+
+Move #3: Car L moved 1 time in the up direction.
+
+Move #4: Car N moved 1 time in the down direction.
+
+Move #5: Car F moved 4 times in the right direction.
+
+Move #6: Car J moved 3 times in the down direction.
+
+Move #7: Car D moved 1 time in the left direction.
+
+Move #8: Car A moved 1 time in the left direction.
+
+Move #9: Car B moved 1 time in the left direction.
+
+Move #10: Car K moved 4 times in the up direction.
+
+Move #11: Car G moved 2 times in the left direction.
+
+Move #12: Car L moved 2 times in the down direction.
+
+Move #13: Car A moved 3 times in the right direction.
+
+Move #14: Car K moved 1 time in the down direction.
+
+Move #15: Car C moved 1 time in the left direction.
+
+Move #16: Car M moved 1 time in the up direction.
+
+Move #17: Car A moved 1 time in the right direction.
+
+
+Time Taken for ucs: 23.712998867034912s
+
+GRID: 
+
+B B C C C M 
+D D K . . M 
+. . K . . . 
+J . . L F F 
+J G G L . N 
+J . . H H N 
+
+
+
+Car Name B:
+Position ranging from 11 to 12 - facing Horizontaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name C:
+Position ranging from 13 to 15 - facing Horizontaly - has length of 3 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 21 to 22 - facing Horizontaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 45 to 46 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name G:
+Position ranging from 52 to 53 - facing Horizontaly - has length of 2 - Fuel level at (98) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 64 to 65 - facing Horizontaly - has length of 2 - Fuel level at (98) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 41 to 61 - facing Verticaly - has length of 3 - Fuel level at (97) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 23 to 33 - facing Verticaly - has length of 2 - Fuel level at (94) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 44 to 54 - facing Verticaly - has length of 2 - Fuel level at (97) - isAmbulance?(False).
+
+Car Name M:
+Position ranging from 16 to 26 - facing Verticaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name N:
+Position ranging from 56 to 66 - facing Verticaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+

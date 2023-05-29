@@ -1,0 +1,355 @@
+Orignal Puzzle GRID:
+
+I . B B B N 
+I C C K M N 
+A A J K M . 
+D D J L M . 
+. . . L F F 
+. G G H H . 
+
+
+
+Moves that led to solution:
+
+Move #1: Car N moved 1 time in the down direction.
+
+Move #2: Car J moved 1 time in the down direction.
+
+Move #3: Car A moved 1 time in the right direction.
+
+Move #4: Car B moved 1 time in the right direction.
+
+Move #5: Car I moved 1 time in the down direction.
+
+Move #6: Car B moved 3 times in the left direction.
+
+Move #7: Car N moved 1 time in the up direction.
+
+Move #8: Car M moved 1 time in the up direction.
+
+Move #9: Car K moved 1 time in the up direction.
+
+Move #10: Car A moved 1 time in the right direction.
+
+Move #11: Car G moved 1 time in the left direction.
+
+Move #12: Car H moved 1 time in the right direction.
+
+Move #13: Car N moved 2 times in the down direction.
+
+Move #14: Car J moved 1 time in the down direction.
+
+Move #15: Car L moved 1 time in the down direction.
+
+Move #16: Car D moved 3 times in the right direction.
+
+Move #17: Car I moved 1 time in the down direction.
+
+Move #18: Car C moved 1 time in the left direction.
+
+Move #19: Car J moved 1 time in the up direction.
+
+Move #20: Car G moved 1 time in the right direction.
+
+Move #21: Car I moved 1 time in the down direction.
+
+Move #22: Car N moved 1 time in the up direction.
+
+Move #23: Car A moved 2 times in the left direction.
+
+Move #24: Car J moved 2 times in the up direction.
+
+Move #25: Car N moved 1 time in the up direction.
+
+Move #26: Car K moved 1 time in the down direction.
+
+Move #27: Car J moved 1 time in the down direction.
+
+Move #28: Car B moved 1 time in the right direction.
+
+Move #29: Car G moved 1 time in the left direction.
+
+Move #30: Car N moved 1 time in the down direction.
+
+Move #31: Car J moved 1 time in the up direction.
+
+Move #32: Car N moved 1 time in the down direction.
+
+Move #33: Car D moved 1 time in the left direction.
+
+Move #34: Car N moved 2 times in the up direction.
+
+Move #35: Car G moved 1 time in the right direction.
+
+Move #36: Car N moved 1 time in the down direction.
+
+Move #37: Car D moved 1 time in the left direction.
+
+Move #38: Car L moved 1 time in the up direction.
+
+Move #39: Car N moved 1 time in the up direction.
+
+Move #40: Car M moved 1 time in the down direction.
+
+Move #41: Car N moved 2 times in the down direction.
+
+Move #42: Car H moved 1 time in the left direction.
+
+Move #43: Car N moved 1 time in the up direction.
+
+Move #44: Car I moved 1 time in the down direction.
+
+Move #45: Car N moved 1 time in the up direction.
+
+Move #46: Car D moved 1 time in the left direction.
+
+Move #47: Car N moved 2 times in the down direction.
+
+Move #48: Car J moved 1 time in the down direction.
+
+Move #49: Car N moved 1 time in the up direction.
+
+Move #50: Car J moved 1 time in the down direction.
+
+Move #51: Car A moved 1 time in the right direction.
+
+Move #52: Car H moved 1 time in the right direction.
+
+Move #53: Car G moved 1 time in the right direction.
+
+Move #54: Car A moved 1 time in the left direction.
+
+Move #55: Car J moved 1 time in the up direction.
+
+Move #56: Car N moved 1 time in the up direction.
+
+Move #57: Car J moved 1 time in the up direction.
+
+Move #58: Car D moved 1 time in the right direction.
+
+Move #59: Car N moved 1 time in the down direction.
+
+Move #60: Car I moved 1 time in the up direction.
+
+Move #61: Car B moved 1 time in the right direction.
+
+Move #62: Car N moved 1 time in the up direction.
+
+Move #63: Car B moved 2 times in the left direction.
+
+Move #64: Car N moved 2 times in the down direction.
+
+Move #65: Car K moved 1 time in the up direction.
+
+Move #66: Car N moved 1 time in the up direction.
+
+Move #67: Car M moved 1 time in the up direction.
+
+Move #68: Car N moved 1 time in the up direction.
+
+Move #69: Car L moved 1 time in the up direction.
+
+Move #70: Car N moved 2 times in the down direction.
+
+Move #71: Car F moved 1 time in the left direction.
+
+Move #72: Car N moved 1 time in the down direction.
+
+Move #73: Car M moved 1 time in the down direction.
+
+Move #74: Car G moved 1 time in the left direction.
+
+Move #75: Car N moved 2 times in the up direction.
+
+Move #76: Car M moved 1 time in the up direction.
+
+Move #77: Car H moved 1 time in the left direction.
+
+Move #78: Car F moved 1 time in the left direction.
+
+Move #79: Car N moved 1 time in the up direction.
+
+Move #80: Car F moved 1 time in the left direction.
+
+Move #81: Car N moved 3 times in the down direction.
+
+Move #82: Car M moved 1 time in the down direction.
+
+Move #83: Car L moved 1 time in the down direction.
+
+Move #84: Car N moved 3 times in the up direction.
+
+Move #85: Car M moved 1 time in the down direction.
+
+Move #86: Car K moved 1 time in the down direction.
+
+Move #87: Car N moved 3 times in the down direction.
+
+Move #88: Car I moved 1 time in the down direction.
+
+Move #89: Car N moved 1 time in the down direction.
+
+Move #90: Car B moved 3 times in the right direction.
+
+Move #91: Car N moved 3 times in the up direction.
+
+Move #92: Car J moved 1 time in the up direction.
+
+Move #93: Car A moved 1 time in the right direction.
+
+Move #94: Car D moved 1 time in the left direction.
+
+Move #95: Car N moved 1 time in the down direction.
+
+Move #96: Car A moved 1 time in the left direction.
+
+Move #97: Car J moved 2 times in the down direction.
+
+Move #98: Car N moved 1 time in the up direction.
+
+Move #99: Car C moved 1 time in the right direction.
+
+Move #100: Car N moved 2 times in the down direction.
+
+Move #101: Car H moved 1 time in the right direction.
+
+Move #102: Car L moved 1 time in the down direction.
+
+Move #103: Car N moved 2 times in the up direction.
+
+Move #104: Car K moved 1 time in the down direction.
+
+Move #105: Car N moved 1 time in the down direction.
+
+Move #106: Car C moved 3 times in the right direction.
+
+Move #107: Car K moved 1 time in the up direction.
+
+Move #108: Car L moved 1 time in the up direction.
+
+Move #109: Car J moved 2 times in the up direction.
+
+Move #110: Car A moved 1 time in the right direction.
+
+Move #111: Car D moved 1 time in the right direction.
+
+Move #112: Car N moved 1 time in the down direction.
+
+Move #113: Car L moved 1 time in the down direction.
+
+Move #114: Car K moved 1 time in the down direction.
+
+Move #115: Car I moved 4 times in the up direction.
+
+Move #116: Car D moved 1 time in the left direction.
+
+Move #117: Car C moved 1 time in the left direction.
+
+Move #118: Car A moved 1 time in the left direction.
+
+Move #119: Car J moved 2 times in the down direction.
+
+Move #120: Car F moved 1 time in the left direction.
+
+Move #121: Car J moved 1 time in the down direction.
+
+Move #122: Car A moved 1 time in the right direction.
+
+Move #123: Car C moved 2 times in the left direction.
+
+Move #124: Car I moved 1 time in the down direction.
+
+Move #125: Car B moved 3 times in the left direction.
+
+Move #126: Car K moved 2 times in the up direction.
+
+Move #127: Car A moved 1 time in the right direction.
+
+Move #128: Car G moved 1 time in the left direction.
+
+Move #129: Car J moved 1 time in the down direction.
+
+Move #130: Car D moved 2 times in the right direction.
+
+Move #131: Car M moved 2 times in the up direction.
+
+Move #132: Car N moved 3 times in the up direction.
+
+Move #133: Car D moved 1 time in the left direction.
+
+Move #134: Car M moved 1 time in the down direction.
+
+Move #135: Car L moved 1 time in the up direction.
+
+Move #136: Car D moved 1 time in the left direction.
+
+Move #137: Car N moved 1 time in the down direction.
+
+Move #138: Car H moved 1 time in the left direction.
+
+Move #139: Car M moved 1 time in the down direction.
+
+Move #140: Car N moved 3 times in the down direction.
+
+Move #141: Car J moved 1 time in the up direction.
+
+Move #142: Car H moved 1 time in the left direction.
+
+Move #143: Car M moved 1 time in the up direction.
+
+Move #144: Car N moved 1 time in the up direction.
+
+Move #145: Car M moved 2 times in the down direction.
+
+Move #146: Car A moved 2 times in the right direction.
+
+
+Time Taken for gbfs_h4: 33.21300005912781s
+
+GRID: 
+
+B B B K . . 
+I C C K . . 
+I . . . . . 
+D D J L M N 
+F F J L M N 
+G G H H M . 
+
+
+
+Car Name B:
+Position ranging from 11 to 13 - facing Horizontaly - has length of 3 - Fuel level at (86) - isAmbulance?(False).
+
+Car Name C:
+Position ranging from 22 to 23 - facing Horizontaly - has length of 2 - Fuel level at (92) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 41 to 42 - facing Horizontaly - has length of 2 - Fuel level at (86) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 51 to 52 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name G:
+Position ranging from 61 to 62 - facing Horizontaly - has length of 2 - Fuel level at (93) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 63 to 64 - facing Horizontaly - has length of 2 - Fuel level at (93) - isAmbulance?(False).
+
+Car Name I:
+Position ranging from 21 to 31 - facing Verticaly - has length of 2 - Fuel level at (89) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 43 to 53 - facing Verticaly - has length of 2 - Fuel level at (79) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 14 to 24 - facing Verticaly - has length of 2 - Fuel level at (91) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 44 to 54 - facing Verticaly - has length of 2 - Fuel level at (92) - isAmbulance?(False).
+
+Car Name M:
+Position ranging from 45 to 65 - facing Verticaly - has length of 3 - Fuel level at (86) - isAmbulance?(False).
+
+Car Name N:
+Position ranging from 46 to 56 - facing Verticaly - has length of 2 - Fuel level at (39) - isAmbulance?(False).
+

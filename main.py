@@ -3,6 +3,7 @@ import heuristic
 import heapq
 import time
 import output
+import sys
 
 nbrOfStates = 0
 
@@ -64,7 +65,7 @@ class State:
     moveCount = 0
     moveLetter = ""
 
-    def __init__(self, grid, Cars, index, parentGrid_index, g, h1, h2, h3, h4, moveDir="", moveCount=0, moveLetter=""):
+    def __init__(self, grid="", Cars={}, index=0, parentGrid_index=None, g=0, h1=0, h2=0, h3=0, h4=0, moveDir="", moveCount=0, moveLetter=""):
 
         self.grid = grid
         self.Cars = Cars
@@ -81,9 +82,7 @@ class State:
 
     def __str__(self):
 
-        string = "State #" + str(self.index) + "\n\n\n"
-
-        self.index = int(str(self.index))
+        string = ""
 
         for x in range(6):
             for y in self.grid[x]:
@@ -169,12 +168,14 @@ class ParkingLot:
     #game state defined as state, but does not initialize object
     gameState = State
 
-    def reset(self, grid=[[]], Cars={}, index=0, parentGrid_index=None, g=0, h1=0, h2=0, h3=0, h4=0, moveDir="", moveCount=0, moveLetter=""):
+    def reset(self, grid=[[]], algo="", Cars={}, index=0, parentGrid_index=None, g=0, h1=0, h2=0, h3=0, h4=0, moveDir="", moveCount=0, moveLetter=""):
 
         self.gameState.grid = copy.deepcopy(grid)
 
-        self.reset_Cars(self.gameState.grid)
+        if any(grid):
+            self.reset_Cars(self.gameState.grid)
 
+        self.gameState.algo = algo
         self.gameState.index = index
         self.gameState.parentGrid_index = parentGrid_index
         self.gameState.g = g
@@ -332,10 +333,8 @@ class ParkingLot:
     def gridInit(self):
 
         global inputList
-        global nbrOfStates
         global customFuel_save
 
-        nbrOfStates += 1
         customFuel_save.clear()
 
         string = inputList.pop(0).split()
@@ -488,13 +487,13 @@ def readInput():
 
     global nbrOfIterations
 
-    nbrOfIterations = 1
+    nbrOfIterations = 0
 
     for line in f:
         if line.startswith("#") or line.startswith('\n'):
             continue
         inputList.append(line)
-        # nbrOfIterations += 1
+        nbrOfIterations += 1
 
 
 def PossibleMoves(lot):
@@ -690,7 +689,11 @@ def mainLoop():
 
     for i in range(nbrOfIterations):
 
-        nbrOfStates = 0
+        nbrOfStates = 1
+
+        if i >= 1:
+
+            obj_og.reset()
 
         obj_og.gridInit()
 
@@ -707,7 +710,7 @@ def mainLoop():
         print(firstSearch[0])
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
         firstSearch = gbfs(obj_og, 2) #heuristic 2
 
         print("Time Taken gbfs_h2: ")
@@ -716,7 +719,7 @@ def mainLoop():
 
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
         firstSearch = gbfs(obj_og, 3) #heuristic 3
 
         print("Time Taken gbfs_h3: ")
@@ -724,7 +727,7 @@ def mainLoop():
         print(firstSearch[0])
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
 
         firstSearch = gbfs(obj_og, 4) #heuristic 4
 
@@ -735,7 +738,7 @@ def mainLoop():
         #A/A* algo - All 4 heuristics
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
         firstSearch = a(obj_og, 1) #heuristic 1
 
         print("Time Taken a_h1: ")
@@ -743,7 +746,7 @@ def mainLoop():
         print(firstSearch[0])
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
         firstSearch = a(obj_og, 2) #heuristic 2
 
         print("Time Taken a_h2: ")
@@ -752,7 +755,7 @@ def mainLoop():
 
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
         firstSearch = a(obj_og, 3) #heuristic 3
 
         print("Time Taken a_h3: ")
@@ -760,7 +763,7 @@ def mainLoop():
         print(firstSearch[0])
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
 
         firstSearch = a(obj_og, 4) #heuristic 4
 
@@ -771,7 +774,7 @@ def mainLoop():
         #Uniform Cost Search Algo
 
         obj_og.reset(temp_Grid)
-        nbrOfStates = 0
+        nbrOfStates = 1
 
         firstSearch = ucs(obj_og)
 
@@ -784,23 +787,31 @@ def mainLoop():
 def a(lot, heuristicNumber):
     # start timer
     start_time = time.time()
-    root = lot
+    root = State()
     goalState = 0
 
-    closed = []  # create a closed list
+    global nbrOfStates
+
+    closed = {}  # create a closed dict
     open_ = []  # ascending order PQ
 
     endSuffering = False
 
     # Will always return a heuristic value
     if heuristicNumber == 1:
+        lot.gameState.algo = "a_h1"
         lot.gameState.h1 = heuristic.h1(lot.gameState)
     elif heuristicNumber == 2:
+        lot.gameState.algo = "a_h2"
         lot.gameState.h2 = heuristic.h2(lot.gameState)
     elif heuristicNumber == 3:
+        lot.gameState.algo = "a_h3"
         lot.gameState.h3 = heuristic.h3(lot.gameState)
     elif heuristicNumber == 4:
+        lot.gameState.algo = "a_h4"
         lot.gameState.h4 = heuristic.h4(lot.gameState)
+
+    root.copy_constructor(lot.gameState)
 
     heapq.heapify(open_)
 
@@ -811,7 +822,7 @@ def a(lot, heuristicNumber):
 
         lot.gameState.copy_constructor(lot.gameState, heapq.heappop(open_))  # Lowest heuristic state, but there could be more.
 
-        closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))  # update closed, goal not reached
+        closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
 
         children = PossibleMoves(lot)  # get children
 
@@ -820,7 +831,7 @@ def a(lot, heuristicNumber):
 
             # check if children in open or closed
 
-            if child in closed or child in open_:
+            if child in closed.values() or child in open_:
                 continue  # skip, coz already in closed or open
 
             if "A" not in child.Cars:
@@ -828,7 +839,7 @@ def a(lot, heuristicNumber):
 
                 lot.gameState.copy_constructor(lot.gameState, child)
 
-                closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))
+                closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
 
                 endSuffering = True
 
@@ -858,7 +869,12 @@ def a(lot, heuristicNumber):
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    # output.output(heuristicNumber, root, elapsed_time, open_, closed, goalState)
+    isgreaterthan50k = False
+
+    if nbrOfStates > 50000:
+        isgreaterthan50k = True
+
+    output.out(lot, root, elapsed_time, open_, closed, isgreaterthan50k)
 
     return [lot, closed, open_, elapsed_time]
 
@@ -866,10 +882,12 @@ def a(lot, heuristicNumber):
 def gbfs(lot, heuristicNumber):
     # start timer
     start_time = time.time()
-    root = lot
+    root = State()
     goalState = 0
 
-    closed = []  # create a closed list
+    global nbrOfStates
+
+    closed = {}  # create a closed dict
     open_ = []  # ascending order PQ
 
     endSuffering = False
@@ -877,26 +895,30 @@ def gbfs(lot, heuristicNumber):
 
     # Will always return a heuristic value
     if heuristicNumber == 1:
+        lot.gameState.algo = "gbfs_h1"
         lot.gameState.h1 = heuristic.h1(lot.gameState)
     elif heuristicNumber == 2:
+        lot.gameState.algo = "gbfs_h2"
         lot.gameState.h2 = heuristic.h2(lot.gameState)
     elif heuristicNumber == 3:
+        lot.gameState.algo = "gbfs_h3"
         lot.gameState.h3 = heuristic.h3(lot.gameState)
     elif heuristicNumber == 4:
+        lot.gameState.algo = "gbfs_h4"
         lot.gameState.h4 = heuristic.h4(lot.gameState)
+
+    root.copy_constructor(lot.gameState)
 
     heapq.heapify(open_)
 
     heapq.heappush(open_, lot.gameState) # current state is opened
-
-    k = 0
 
     # while Open isn't empty
     while open_:
 
         lot.gameState.copy_constructor(lot.gameState, heapq.heappop(open_)) # Lowest heuristic state, but there could be more.
 
-        closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4,lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))  # update closed, goal not reached
+        closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
 
         children = PossibleMoves(lot)  # get children
 
@@ -905,21 +927,19 @@ def gbfs(lot, heuristicNumber):
 
             # check if children in open or closed
 
-            if child in closed or child in open_:
+            if child in closed.values() or child in open_:
                 continue  # skip, coz already in closed or open
 
             if "A" not in child.Cars:
+
                 goalState = child
 
                 lot.gameState.copy_constructor(lot.gameState, child)
 
-                closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4,lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))
-
+                closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid),copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
                 endSuffering = True
 
                 break  # REACHED GOAL, exit loop, current is the goal state!
-
-            # print(child)
 
             # add children in open
             if heuristicNumber == 1:
@@ -943,20 +963,32 @@ def gbfs(lot, heuristicNumber):
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    # output.output(heuristicNumber, root, elapsed_time, open_, closed, goalState)
+    isgreaterthan50k = False
+
+    if nbrOfStates > 50000:
+
+        isgreaterthan50k = True
+
+    output.out(lot, root, elapsed_time, open_, closed, isgreaterthan50k)
 
     return [lot, closed, open_, elapsed_time]
 
 def ucs(lot):
     # start timer
     start_time = time.time()
-    root = lot
+    root = State()
     goalState = 0
 
-    closed = []  # create a closed list
+    global nbrOfStates
+
+    closed = {}  # create a closed dict
     open_ = []  # ascending order PQ
 
     endSuffering = False
+
+    lot.gameState.algo = "ucs"
+    root.copy_constructor(lot.gameState)
+
 
     heapq.heapify(open_)
 
@@ -967,7 +999,7 @@ def ucs(lot):
 
         lot.gameState.copy_constructor(lot.gameState, heapq.heappop(open_)) # Lowest cost 
 
-        closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))  # update closed, goal not reached
+        closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
 
         children = PossibleMoves(lot)  # get children
 
@@ -976,15 +1008,16 @@ def ucs(lot):
 
             # check if children in open or closed
 
-            if child in closed or child in open_:
+            if child in closed.values() or child in open_:
                 continue  # skip, because it's already in closed or open
 
             if "A" not in child.Cars:
+
                 goalState = child
 
                 lot.gameState.copy_constructor(lot.gameState, child)
 
-                closed.append(State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter))
+                closed[lot.gameState.index] = State(copy.deepcopy(lot.gameState.grid), copy.deepcopy(lot.gameState.Cars), lot.gameState.index, lot.gameState.parentGrid_index, lot.gameState.g, lot.gameState.h1, lot.gameState.h2, lot.gameState.h3, lot.gameState.h4, lot.gameState.moveDir, lot.gameState.moveCount, lot.gameState.moveLetter)
 
                 endSuffering = True
 
@@ -1001,12 +1034,18 @@ def ucs(lot):
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    # output.output(heuristicNumber, root, elapsed_time, open_, closed, goalState)
+    isgreaterthan50k = False
+
+    if nbrOfStates > 50000:
+        isgreaterthan50k = True
+
+    output.out(lot, root, elapsed_time, open_, closed, isgreaterthan50k)
 
     return [lot, closed, open_, elapsed_time]
 
 
 
+sys.setrecursionlimit(5000)
 
 mainLoop()
 

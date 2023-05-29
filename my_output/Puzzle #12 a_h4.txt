@@ -1,0 +1,74 @@
+Orignal Puzzle GRID:
+
+B B B K C C 
+D D . K . L 
+I A A K . L 
+I . J E E M 
+F F J . . M 
+. . . . H H 
+
+
+
+Moves that led to solution:
+
+Move #1: Car J moved 1 time in the down direction.
+
+Move #2: Car E moved 2 times in the left direction.
+
+Move #3: Car K moved 3 times in the down direction.
+
+Move #4: Car A moved 2 times in the right direction.
+
+Move #5: Car C moved 1 time in the left direction.
+
+Move #6: Car L moved 1 time in the up direction.
+
+Move #7: Car A moved 1 time in the right direction.
+
+
+Time Taken for a_h4: 0.09599804878234863s
+
+GRID: 
+
+B B B C C L 
+D D . . . L 
+I . . . . . 
+I E E K . M 
+F F J K . M 
+. . J K H H 
+
+
+
+Car Name B:
+Position ranging from 11 to 13 - facing Horizontaly - has length of 3 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name C:
+Position ranging from 14 to 15 - facing Horizontaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 21 to 22 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name E:
+Position ranging from 42 to 43 - facing Horizontaly - has length of 2 - Fuel level at (98) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 51 to 52 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 65 to 66 - facing Horizontaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name I:
+Position ranging from 31 to 41 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 53 to 63 - facing Verticaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 44 to 64 - facing Verticaly - has length of 3 - Fuel level at (97) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 16 to 26 - facing Verticaly - has length of 2 - Fuel level at (99) - isAmbulance?(False).
+
+Car Name M:
+Position ranging from 46 to 56 - facing Verticaly - has length of 2 - Fuel level at (100) - isAmbulance?(False).
+

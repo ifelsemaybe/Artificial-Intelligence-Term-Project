@@ -1,0 +1,186 @@
+Orignal Puzzle GRID:
+
+B B I C C . 
+H . I . K L 
+H A A . K L 
+H D D D K L 
+. . . J E E 
+F F . J G G 
+
+
+
+Moves that led to solution:
+
+Move #1: Car F moved 1 time in the right direction.
+
+Move #2: Car L moved 1 time in the up direction.
+
+Move #3: Car H moved 2 times in the down direction.
+
+Move #4: Car A moved 1 time in the left direction.
+
+Move #5: Car I moved 1 time in the down direction.
+
+Move #6: Car C moved 1 time in the left direction.
+
+Move #7: Car K moved 1 time in the up direction.
+
+Move #8: Car D moved 2 times in the right direction.
+
+Move #9: Car I moved 2 times in the down direction.
+
+Move #10: Car A moved 1 time in the right direction.
+
+Move #11: Car H moved 1 time in the up direction.
+
+Move #12: Car F moved 1 time in the left direction.
+
+Move #13: Car I moved 1 time in the down direction.
+
+Move #14: Car D moved 1 time in the left direction.
+
+Move #15: Car L moved 1 time in the down direction.
+
+Move #16: Car H moved 1 time in the up direction.
+
+Move #17: Car D moved 1 time in the left direction.
+
+Move #18: Car K moved 1 time in the down direction.
+
+Move #19: Car C moved 2 times in the right direction.
+
+Move #20: Car B moved 2 times in the right direction.
+
+Move #21: Car H moved 1 time in the up direction.
+
+Move #22: Car B moved 1 time in the left direction.
+
+Move #23: Car D moved 1 time in the left direction.
+
+Move #24: Car J moved 4 times in the up direction.
+
+Move #25: Car G moved 1 time in the left direction.
+
+Move #26: Car E moved 1 time in the left direction.
+
+Move #27: Car L moved 2 times in the down direction.
+
+Move #28: Car D moved 1 time in the right direction.
+
+Move #29: Car J moved 1 time in the down direction.
+
+Move #30: Car C moved 1 time in the left direction.
+
+Move #31: Car H moved 1 time in the down direction.
+
+Move #32: Car B moved 1 time in the left direction.
+
+Move #33: Car C moved 1 time in the left direction.
+
+Move #34: Car K moved 1 time in the up direction.
+
+Move #35: Car L moved 3 times in the up direction.
+
+Move #36: Car G moved 1 time in the right direction.
+
+Move #37: Car L moved 1 time in the down direction.
+
+Move #38: Car E moved 1 time in the right direction.
+
+Move #39: Car G moved 1 time in the left direction.
+
+Move #40: Car D moved 1 time in the right direction.
+
+Move #41: Car L moved 1 time in the up direction.
+
+Move #42: Car D moved 1 time in the right direction.
+
+Move #43: Car I moved 1 time in the up direction.
+
+Move #44: Car F moved 1 time in the right direction.
+
+Move #45: Car H moved 2 times in the down direction.
+
+Move #46: Car E moved 1 time in the left direction.
+
+Move #47: Car A moved 1 time in the left direction.
+
+Move #48: Car I moved 2 times in the up direction.
+
+Move #49: Car E moved 1 time in the left direction.
+
+Move #50: Car D moved 1 time in the left direction.
+
+Move #51: Car L moved 3 times in the down direction.
+
+Move #52: Car D moved 1 time in the left direction.
+
+Move #53: Car K moved 2 times in the down direction.
+
+Move #54: Car C moved 1 time in the right direction.
+
+Move #55: Car I moved 1 time in the up direction.
+
+Move #56: Car C moved 1 time in the right direction.
+
+Move #57: Car J moved 1 time in the up direction.
+
+Move #58: Car A moved 1 time in the right direction.
+
+Move #59: Car H moved 2 times in the up direction.
+
+Move #60: Car F moved 1 time in the left direction.
+
+Move #61: Car G moved 1 time in the left direction.
+
+Move #62: Car K moved 1 time in the down direction.
+
+Move #63: Car A moved 3 times in the right direction.
+
+
+Time Taken for gbfs_h3: 0.7720015048980713s
+
+GRID: 
+
+B B I J C C 
+H . I J . . 
+H . . . . . 
+H D D D K L 
+. . E E K L 
+F F G G K L 
+
+
+
+Car Name B:
+Position ranging from 11 to 12 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name C:
+Position ranging from 15 to 16 - facing Horizontaly - has length of 2 - Fuel level at (93) - isAmbulance?(False).
+
+Car Name D:
+Position ranging from 42 to 44 - facing Horizontaly - has length of 3 - Fuel level at (90) - isAmbulance?(False).
+
+Car Name E:
+Position ranging from 53 to 54 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name F:
+Position ranging from 61 to 62 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name G:
+Position ranging from 63 to 64 - facing Horizontaly - has length of 2 - Fuel level at (96) - isAmbulance?(False).
+
+Car Name H:
+Position ranging from 21 to 41 - facing Verticaly - has length of 3 - Fuel level at (90) - isAmbulance?(False).
+
+Car Name I:
+Position ranging from 13 to 23 - facing Verticaly - has length of 2 - Fuel level at (92) - isAmbulance?(False).
+
+Car Name J:
+Position ranging from 14 to 24 - facing Verticaly - has length of 2 - Fuel level at (94) - isAmbulance?(False).
+
+Car Name K:
+Position ranging from 45 to 65 - facing Verticaly - has length of 3 - Fuel level at (94) - isAmbulance?(False).
+
+Car Name L:
+Position ranging from 46 to 66 - facing Verticaly - has length of 3 - Fuel level at (88) - isAmbulance?(False).
+
