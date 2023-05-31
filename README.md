@@ -32,4 +32,4 @@ There are a 3 different algorithms used to find the set of moves that lead to th
 
 ## Acknowledgments
 
-I would like to acknowledge both of my teammates: Tariq Benmouh and Christian Jerjian, who helped me in creating this project. The original github link can be found here: https://github.com/Tariq-B/MiniProject2
+I would like to acknowledge both of my former teammates: Tariq Benmouh and Christian Jerjian, who helped me in creating this project. The original github link can be found here: https://github.com/Tariq-B/MiniProject2
